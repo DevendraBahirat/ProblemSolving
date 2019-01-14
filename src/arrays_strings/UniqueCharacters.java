@@ -1,4 +1,4 @@
-package cracking.the.coding.interview.arrays_strings;
+package arrays_strings;
 
 /**
  * Statement:- Implement an Algorithm to determine if a String has all unique characters.

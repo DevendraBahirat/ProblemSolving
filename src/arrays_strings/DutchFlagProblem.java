@@ -1,4 +1,4 @@
-package cracking.the.coding.interview.arrays_strings;
+package arrays_strings;
 
 import java.util.Arrays;
 
