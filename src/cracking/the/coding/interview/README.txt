@@ -1,1 +1,0 @@
-Solutions to Problems in Cracking the coding interview.
