@@ -1,9 +1,6 @@
 package bfs;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Given a dictionary, and two words ‘start’ and ‘target’ (both of same length).
@@ -11,7 +8,7 @@ import java.util.Queue;
  * such that adjacent words in the chain only differ by one character and each word in the chain is a valid word
  * i.e., it exists in the dictionary.
  * It may be assumed that the ‘target’ word exists in dictionary and length of all dictionary words is same.
- *
+ * <p>
  * Input:  Dictionary = {POON, PLEE, SAME, POIE, PLEA, PLIE, POIN}
  * start = TOON
  * target = PLEA
@@ -20,65 +17,86 @@ import java.util.Queue;
  */
 public class WordLadderProblem {
 
-    public static void main(String[] args) {
-        List<String> dictonary = new ArrayList<>();
-        dictonary.add("POON");
-        dictonary.add("PLEE");
-        dictonary.add("SAME");
-        dictonary.add("POIE");
-        dictonary.add("PLEA");
-        dictonary.add("PLIE");
-        dictonary.add("POIN");
+	public static void main(String[] args) {
+		List<String> dictonary = new ArrayList<>();
+		dictonary.add("POON");
+		dictonary.add("PLEE");
+		dictonary.add("SAME");
+		dictonary.add("POIE");
+		dictonary.add("PLEA");
+		dictonary.add("PLIE");
+		dictonary.add("POIN");
 
-        String start = "TOON";
-        String target = "PLEA";
+		String start = "TOON";
+		String target = "PLEA";
 
-        System.out.println(shortestWordChainCount(start, target, dictonary));
-    }
+		String start2 = "hot";
+		String target2 = "dot";
+		List<String> dict2 = new ArrayList<>();
+		dict2.add("hot");
+		dict2.add("dot");
+		dict2.add("dog");
+            /*dict2.add("lot");
+            dict2.add("log");
+            dict2.add("cog");*/
+		String start3 = "a";
+		String target3 = "c";
+		List<String> dict3 = new ArrayList<>();
+		dict3.add("a");
+		dict3.add("b");
+		dict3.add("c");
 
-    private static class WordDistance {
-        private String word;
-        private int distance;
-    }
+		System.out.println(shortestWordChainCount(start, target, dictonary));
+		System.out.println(shortestWordChainCount(start2, target2, dict2));
+		System.out.println(shortestWordChainCount(start3, target3, dict3));
+	}
 
-    private static int shortestWordChainCount(String start, String target, List<String> dictonary) {
-        Queue<WordDistance> queue = new ArrayDeque<>();
+	private static class WordDistance {
+		private String word;
+		private int distance;
+	}
 
-        if (start != null && !start.isEmpty() && target != null && !target.isEmpty() && dictonary.contains(target)) {
-            WordDistance initial = new WordDistance();
-            initial.word = start;
-            initial.distance = 1;
-            queue.add(initial);
-        }
+	private static int shortestWordChainCount(String start, String target, List<String> dictionary) {
+		Queue<WordDistance> queue = new ArrayDeque<>();
 
-        while (!queue.isEmpty()) {
-            WordDistance current = queue.remove();
-            for (int i = 0; i < dictonary.size(); i++) {
-                if (target.equals(current.word)) {
-                    return current.distance;
-                }
-                if (isAdjacent(current.word, dictonary.get(i))) {
-                    WordDistance adjacent = new WordDistance();
-                    adjacent.word = dictonary.get(i);
-                    adjacent.distance = current.distance + 1;
-                    queue.add(adjacent);
-                    dictonary.remove(dictonary.get(i));
-                }
-            }
-        }
-        return -1;
-    }
+		if (start != null && !start.isEmpty() && target != null && !target.isEmpty() && dictionary.contains(target)) {
+			WordDistance initial = new WordDistance();
+			initial.word = start;
+			initial.distance = 1;
+			queue.add(initial);
+		}
+		dictionary.remove(start);
 
-    private static boolean isAdjacent(String word, String validWord) {
-        int diffCount = 0;
-        for (int i = 0; i < validWord.length(); i++) {
-            if (word.charAt(i) != validWord.charAt(i)) {
-                diffCount++;
-                if (diffCount > 1) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
+		while (!queue.isEmpty()) {
+			WordDistance current = queue.remove();
+			if (target.equals(current.word)) {
+				return current.distance;
+			}
+			Iterator<String> iterator = dictionary.iterator();
+			while (iterator.hasNext()) {
+				String next = iterator.next();
+				if (isAdjacent(current.word, next)) {
+					WordDistance adjacent = new WordDistance();
+					adjacent.word = next;
+					adjacent.distance = current.distance + 1;
+					queue.add(adjacent);
+					iterator.remove();
+				}
+			}
+		}
+		return 0;
+	}
+
+	private static boolean isAdjacent(String word, String validWord) {
+		int diffCount = 0;
+		for (int i = 0; i < validWord.length(); i++) {
+			if (word.charAt(i) != validWord.charAt(i)) {
+				diffCount++;
+				if (diffCount > 1) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 }
