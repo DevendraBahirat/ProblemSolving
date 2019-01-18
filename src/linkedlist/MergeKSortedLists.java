@@ -1,6 +1,5 @@
 package linkedlist;
 
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -71,11 +70,11 @@ public class MergeKSortedLists {
 	}
 
 	static ListNode mergeKLists(ListNode[] lists) {
-		ListNode resultHead = null, currentNode = null, previousNode = null;
+		ListNode resultHead = null, currentNode, previousNode = null;
 		if (lists.length == 0) {
-			return resultHead;
+			return null;
 		}
-		Queue<ListNode> minHeap = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
+		Queue<ListNode> minHeap = new PriorityQueue<>(lists.length, new Comparator<>() {
 			@Override
 			public int compare(ListNode o1, ListNode o2) {
 				if (o1.val > o2.val) {
@@ -93,7 +92,7 @@ public class MergeKSortedLists {
 				minHeap.add(new ListNode(Integer.MAX_VALUE));
 			}
 		}
-		while (minHeap.peek().val != Integer.MAX_VALUE) {
+		while (!minHeap.isEmpty() && minHeap.peek().val != Integer.MAX_VALUE) {
 			currentNode = minHeap.remove();
 			if (resultHead == null) {
 				resultHead = currentNode;

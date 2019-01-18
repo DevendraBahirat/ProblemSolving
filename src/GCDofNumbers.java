@@ -14,7 +14,7 @@ public class GCDofNumbers {
 
 	// Function to find gcd of array of
 	// numbers
-	static int generalizedGCD(int num, int arr[])
+	static int generalizedGCD(int num, int[] arr)
 	{
 		int result = arr[0];
 		for (int i = 1; i < num; i++)

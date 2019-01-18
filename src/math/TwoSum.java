@@ -11,31 +11,31 @@ import java.util.Map;
  *
  * Example:
  *
- * Given nums = [2, 7, 11, 15], target = 9,
+ * Given input = [2, 7, 11, 15], target = 9,
  *
- * Because nums[0] + nums[1] = 2 + 7 = 9,
+ * Because input[0] + input[1] = 2 + 7 = 9,
  * return [0, 1].
  */
 public class TwoSum {
 
-	public static int[] twoSum(int[] nums, int target) {
+	public static int[] twoSum(int[] input, int target) {
 		Map<Integer, Integer> sumMap = new HashMap<>();
 		int[] result = new int[2];
-		for (int i=0; i<nums.length; i++) {
-			if (sumMap.containsKey(target - nums[i])) {
+		for (int i=0; i<input.length; i++) {
+			if (sumMap.containsKey(target - input[i])) {
 				result[0] = i;
-				result[1] = sumMap.get(target - nums[i]);
+				result[1] = sumMap.get(target - input[i]);
 
 			} else {
-				sumMap.put(nums[i], i);
+				sumMap.put(input[i], i);
 			}
 		}
 		return result;
 	}
 
 	public static void main(String[] args) {
-		int[] nums = {2, 7, 11, 15};
+		int[] input = {2, 7, 11, 15};
 		int target = 9;
-		System.out.println(Arrays.toString(twoSum(nums, target)));
+		System.out.println(Arrays.toString(twoSum(input, target)));
 	}
 }

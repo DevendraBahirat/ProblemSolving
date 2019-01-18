@@ -15,17 +15,18 @@ import java.util.*;
  * Output: 7
  * Explanation: TOON - POON - POIN - POIE - PLIE - PLEE - PLEA
  */
+@SuppressWarnings("ALL")
 public class WordLadderProblem {
 
 	public static void main(String[] args) {
-		List<String> dictonary = new ArrayList<>();
-		dictonary.add("POON");
-		dictonary.add("PLEE");
-		dictonary.add("SAME");
-		dictonary.add("POIE");
-		dictonary.add("PLEA");
-		dictonary.add("PLIE");
-		dictonary.add("POIN");
+		List<String> dictionary = new ArrayList<>();
+		dictionary.add("POON");
+		dictionary.add("PLEE");
+		dictionary.add("SAME");
+		dictionary.add("POIE");
+		dictionary.add("PLEA");
+		dictionary.add("PLIE");
+		dictionary.add("POIN");
 
 		String start = "TOON";
 		String target = "PLEA";
@@ -46,7 +47,7 @@ public class WordLadderProblem {
 		dict3.add("b");
 		dict3.add("c");
 
-		System.out.println(shortestWordChainCount(start, target, dictonary));
+		System.out.println(shortestWordChainCount(start, target, dictionary));
 		System.out.println(shortestWordChainCount(start2, target2, dict2));
 		System.out.println(shortestWordChainCount(start3, target3, dict3));
 	}

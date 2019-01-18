@@ -32,7 +32,7 @@ public class AddTwoNumbers {
 	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode resultHead = null;
 		ListNode previous = null;
-		ListNode temp = null;
+		ListNode temp;
 		int carry = 0;
 
 		while (l1 != null || l2 != null) {

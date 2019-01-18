@@ -25,6 +25,7 @@ import java.util.List;
  * digits except last one.
  */
 
+@SuppressWarnings("SpellCheckingInspection")
 public class NumberPalindromesUptoN {
 
 	public static void main(String[] args) {
@@ -38,7 +39,7 @@ public class NumberPalindromesUptoN {
 		for (int i = 0; i < 2; i++) {
 			int j = 1;
 			int number;
-			while ((number = createPalindrome(j, 10, i % 2 == 1)) < input) {
+			while ((number = createPalindrome(j, i % 2 == 1)) < input) {
 				result.add(number);
 				j++;
 			}
@@ -47,17 +48,17 @@ public class NumberPalindromesUptoN {
 		return result;
 	}
 
-	private static int createPalindrome(int input, int divisor, boolean shouldGenerateOddLength) {
+	private static int createPalindrome(int input, boolean shouldGenerateOddLength) {
 		int n = input;
 		int palindrome = input;
 
 		if (shouldGenerateOddLength) {
-			n /= divisor;
+			n /= 10;
 		}
 
 		while (n > 0) {
-			palindrome = palindrome * divisor + (n % divisor);
-			n /= divisor;
+			palindrome = palindrome * 10 + (n % 10);
+			n /= 10;
 		}
 		return palindrome;
 	}

@@ -47,6 +47,7 @@ import java.util.Scanner;
  * He enters and leaves one valley.
  */
 
+@SuppressWarnings("SpellCheckingInspection")
 public class CountingValleys {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -61,7 +62,7 @@ public class CountingValleys {
 
         int result = countingValleys(n, s);
 
-        System.out.println(String.valueOf(result));
+        System.out.println(result);
 
         scanner.close();
     }

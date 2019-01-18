@@ -39,19 +39,19 @@ public class FirstMissingPositiveNumberInteger {
             return 1;
         }
         //Bringing all positive integers to left of the array
-        int positveNumbersCount = 0, temp;
+        int positiveNumbersCount = 0, temp;
         for (int i = 0; i < input.length; i++) {
             if (input[i] > 0) {
                 temp = input[i];
-                input[i] = input[positveNumbersCount];
-                input[positveNumbersCount] = temp;
-                positveNumbersCount++;
+                input[i] = input[positiveNumbersCount];
+                input[positiveNumbersCount] = temp;
+                positiveNumbersCount++;
             }
         }
         System.out.println(Arrays.toString(input));
 
         //Handling all negative/zero input
-        if (positveNumbersCount == 0) {
+        if (positiveNumbersCount == 0) {
             return 1;
         }
 
@@ -62,9 +62,9 @@ public class FirstMissingPositiveNumberInteger {
           During traversing, we can ignore the index value if it is greater than array size.
           We are bothered only for array values in range of array size.
          */
-        for (int j = 0; j < positveNumbersCount; j++) {
+        for (int j = 0; j < positiveNumbersCount; j++) {
             int indexToInvert = Math.abs(input[j]) - 1;
-            if (indexToInvert >= 0 && indexToInvert < positveNumbersCount && input[indexToInvert] > 0) {
+            if (indexToInvert >= 0 && indexToInvert < positiveNumbersCount && input[indexToInvert] > 0) {
                 input[indexToInvert] *= -1;
             }
         }
@@ -75,6 +75,6 @@ public class FirstMissingPositiveNumberInteger {
                 return k + 1;
             }
         }
-        return positveNumbersCount + 1;
+        return positiveNumbersCount + 1;
     }
 }

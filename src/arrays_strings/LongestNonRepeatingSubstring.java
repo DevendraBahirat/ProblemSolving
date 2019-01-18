@@ -1,5 +1,6 @@
 package arrays_strings;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class LongestNonRepeatingSubstring {
 
 	public static void main(String[] args) {

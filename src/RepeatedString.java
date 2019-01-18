@@ -23,11 +23,12 @@ import java.util.Scanner;
  * The first line contains a single string, s.
  * The second line contains an integer, n.
  */
+@SuppressWarnings("ALL")
 public class RepeatedString {
 
     // Complete the repeatedString function below.
     static long repeatedString(String s, long n) {
-        long res = 0, multiplier = 1, remainder = 0;
+        long res = 0, multiplier = 1, remainder;
         multiplier = n/s.length();
         remainder = n%s.length();
         for(int i=0; i<n && i<s.length(); i++) {
@@ -55,7 +56,7 @@ public class RepeatedString {
 
         long result = repeatedString(s, n);
 
-        System.out.println(String.valueOf(result));
+        System.out.println(result);
 
         scanner.close();
     }

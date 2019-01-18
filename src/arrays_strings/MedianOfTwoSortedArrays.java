@@ -20,6 +20,7 @@ package arrays_strings;
  *
  * The median is (2 + 3)/2 = 2.5
  */
+@SuppressWarnings("ALL")
 public class MedianOfTwoSortedArrays {
 	public static void main(String[] args) {
 		int[] input1 = {1, 3, 8, 9, 15};

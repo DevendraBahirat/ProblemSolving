@@ -21,6 +21,7 @@ package bfs;
  * Given word = "SEE", return true.
  * Given word = "ABCB", return false.
  */
+@SuppressWarnings("ALL")
 public class WordSearch {
 
 	public static void main(String[] args) {

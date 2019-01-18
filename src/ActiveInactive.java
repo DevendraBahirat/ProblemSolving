@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Amazon amcat test Demo test problem 1.
+ * Amazon online test Demo test problem 1.
  * If the neighbouring cells have same value i.e. both 0 or both 1 the the current cell becomes inactive the next day.
  * else it becomes active the next day.
  *
