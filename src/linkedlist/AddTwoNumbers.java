@@ -1,4 +1,4 @@
-package math;
+package linkedlist;
 
 /**
  * You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each
