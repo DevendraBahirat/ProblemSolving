@@ -1,8 +1,6 @@
 package dynamic_programming;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest
@@ -22,12 +20,12 @@ import java.util.List;
 public class CoinChange {
 
 	public static void main(String[] args) {
-		/*int[] coins = {1, 2, 5};
-		int amount = 11;*/
+		int[] coins = {1, 2, 5};
+		int amount = 11;
 
 		int[] coins1 = { 2};
 		int amount1 = 3;
-		//System.out.println(coinChange(coins, amount));
+		System.out.println(coinChange(coins, amount));
 		System.out.println(coinChange(coins1, amount1));
 	}
 
