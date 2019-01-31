@@ -92,10 +92,10 @@ public class RottenOranges {
                 time++;
             }
         }
-        return hasAtLeastOneRottenOrange(oranges) ? -1 : time;
+        return hasAtLeastOneOrangeToRot(oranges) ? -1 : time;
     }
 
-    private static boolean hasAtLeastOneRottenOrange(int[][] oranges) {
+    private static boolean hasAtLeastOneOrangeToRot(int[][] oranges) {
         for (int[] orange : oranges) {
             for (int j = 0; j < oranges[0].length; j++) {
                 if (orange[j] == 1) {
