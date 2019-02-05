@@ -1,4 +1,4 @@
-package arrays_strings;
+package dynamic_programming;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class LargestContiguousSum {
