@@ -44,9 +44,9 @@ public class ImplementStackWithMax {
 			throw new RuntimeException("cannot pop from empty stack");
 		}
 		int result = stack.val;
-		if (stack.previousMax != null) {
+
 			max = stack.previousMax;
-		}
+
 		stack = stack.next;
 		return result;
 	}

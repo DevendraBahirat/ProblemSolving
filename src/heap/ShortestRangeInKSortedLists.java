@@ -85,7 +85,8 @@ public class ShortestRangeInKSortedLists {
 				minHeap.add(temp);
 				maxHeap.add(temp);
 			}
-		}while (temp != null);
+		} while (temp != null);
+
 		return result;
 	}
 

@@ -39,6 +39,12 @@ public class CoinChange2 {
 			table[i][0] = 1;
 		}
 
+		/*
+			Either you choose to have the current coin or you do not choose to include the current coin
+			you do not choose ==== your amount remains the same but coin choice drops to the one in above row
+			you choose =========== your amount changes so stay in the same row but you column changes to (j-coin value)
+			Add those two possibilities and you have your answer
+		 */
 		for (int i=1; i<=coins.length; i++) {
 			for (int j=1; j<= amount; j++) {
 				table[i][j] = table[i-1][j];

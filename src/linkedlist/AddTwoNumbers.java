@@ -14,9 +14,9 @@ package linkedlist;
  */
 public class AddTwoNumbers {
 	public static void main(String[] args) {
-		ListNode head1 = new ListNode(2);
-		ListNode tens1 = new ListNode(4);
-		ListNode hundreds1 = new ListNode(3);
+		ListNode head1 = new ListNode(9);
+		ListNode tens1 = new ListNode(9);
+		ListNode hundreds1 = new ListNode(2);
 		head1.next = tens1;
 		tens1.next = hundreds1;
 

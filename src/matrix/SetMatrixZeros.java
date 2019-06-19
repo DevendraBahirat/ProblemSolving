@@ -54,6 +54,7 @@ public class SetMatrixZeros {
 		};
 
 		print(setZeroes(input1));
+		print(setZeroes(input2));
 	}
 
 	static void print(int[][] mat) {
@@ -61,7 +62,7 @@ public class SetMatrixZeros {
 			for (int j=0; j<mat[0].length; j++) {
 				System.out.print(mat[i][j] + " ");
 			}
-			System.out.println("");
+			System.out.println();
 		}
 	}
 

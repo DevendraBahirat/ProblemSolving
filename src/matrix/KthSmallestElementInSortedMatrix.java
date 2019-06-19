@@ -13,7 +13,7 @@ public class KthSmallestElementInSortedMatrix {
 			{12, 13, 15}
 		};
 
-		System.out.println(kthSmallest(input, 8));
+		System.out.println(kthSmallest(input, 4));
 	}
 
 	static class Position {
